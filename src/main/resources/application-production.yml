@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:
+    username:
+    password:
+    hikari:
+      connection-test-query: SELECT 1
+      minimum-idle: 10
+      maximum-pool-size: 20
+      pool-name: frogNftDbcp
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    generate-ddl: false
+    open-in-view: false
+    show-sql: false
+
+frc-contract:
+  contract-address: 0x8f957f9d4eae345f6d23afff8c8a1fff83d564d2
+  symbol: FRC
+  alias: frogonc
+  token-name: frogOnC
+
+# mainnet
+kas-api:
+  access-key :
+  secret-access-key :
+  authorization :
+  kip17-api-url: https://kip17-api.klaytnapi.com
+
+token-api-url:
+  template: https://token.nfthero.me/nft/frc/{tokenId}

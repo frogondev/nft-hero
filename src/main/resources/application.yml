@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: frog-nft
+  profiles:
+    active: prod
+  pid:
+    file: logs/frog-nft.pid
+
+server:
+  port: 5000
+
+logging:
+  level:
+    springfox: OFF

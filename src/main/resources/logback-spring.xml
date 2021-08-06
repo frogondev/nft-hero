@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <springProfile name="dev">
+        <include resource="logback-base.xml"/>
+        <root level="DEBUG">
+            <appender-ref ref="STDOUT"/>
+            <appender-ref ref="debug_log"/>
+            <appender-ref ref="error_log"/>
+            <appender-ref ref="info_log"/>
+        </root>
+        <logger name="com.frogbyhinter.frognft" level="DEBUG">
+            <appender-ref ref="application_log"/>
+        </logger>
+        <logger name="org.hibernate.SQL" level="DEBUG">
+            <appender-ref ref="query_log"/>
+        </logger>
+    </springProfile>
+
+    <springProfile name="prod">
+        <include resource="logback-base.xml"/>
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+            <appender-ref ref="error_log"/>
+            <appender-ref ref="info_log"/>
+        </root>
+        <logger name="com.frogbyhinter.frognft" level="INFO">
+            <appender-ref ref="application_log"/>
+        </logger>
+    </springProfile>
+
+</configuration>
